@@ -18,8 +18,9 @@
 <table>
   <tr>
     <th>id</th>
-    <th>name</th>
-    <th>age</th>
+    <th>content</th>
+    <th>更新</tr>
+    <th>削除</th>
   </tr>
   @foreach ($items as $item)
   <tr>
@@ -27,7 +28,7 @@
       {{$item->id}}
     </td>
     <td>
-      {{$item->name}}
+      {{$item->content}}
     </td>
     <td>
       {{$item->age}}

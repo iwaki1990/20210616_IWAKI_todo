@@ -12,4 +12,17 @@ class TodoController extends Controller
         $items = DB::table('todos')->get();
         return view('index', ['items' => $items]);
     }
+    public function add(Request $request)
+    {
+        return view('add');
+    }
+    public function create(Request $request)
+    {
+        $param = [
+            'content' => $request->content,
+            'age' => $request->age,
+        ];
+        DB::insert('insert into todo (contents) values (:test)', $param);
+        return redirect('/');
+    }
 }
