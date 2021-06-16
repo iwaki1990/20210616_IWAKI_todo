@@ -14,10 +14,10 @@ class CreateTodosTable extends Migration
     public function up()
     {
            Schema::create('todos', function (Blueprint $table) {
-             $table->id(BIGINT(20));
-             $table->VARCHAR(191)('content');
-             $table->timestamp('created_at')->useCurrent()->nullable();
-             $table->timestamp('updated_at')->useCurrent()->nullable();
+            $table->bigIncrements('id');
+            $table->string('name', 100);
+            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
            });
     }
 
