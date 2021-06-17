@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>COACHTECH</title>
-  <link rel="stylesheet" href="resouces/app.css" />
+  <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 </head>
 
 <body>
@@ -19,6 +19,7 @@
           <input class="button-add" type="submit" value="追加" />
         </form>
         <table>
+        @csrf
           <tr>
             <th>作成日</th>
             <th>タスク名</th>
