@@ -8,9 +8,7 @@
   <title>COACHTECH</title>
   <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 </head>
-
 <body>
-<p>{{$txt}}</p>
   @if (count($errors) > 0)
     <p>入力に問題があります</p>
   @endif
@@ -20,12 +18,10 @@
       <p class="title mb-15">Todo List</p>
             <div class="todo">
         <form action="/todo/create" method="post" class="flex between mb-30">
-         
           <input class="button-add" type="submit" value="追加" />
         </form>
         <table>
         @csrf
-      @if($errors->has('txt'))
           <tr>
             <th>作成日</th>
             <th>タスク名</th>
