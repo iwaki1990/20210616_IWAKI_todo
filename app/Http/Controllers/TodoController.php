@@ -105,12 +105,5 @@ class TodoController extends Controller
     }
     
 
-    public function remove(Request $request)
-    {
-        Todo::find($request->id)->delete();
-        return redirect('/');
-    }
-    
-    
-}
+ 
 
