@@ -49,6 +49,30 @@ class TodoController extends Controller
         $todo->fill($form)->save();
         return redirect('/');
     }
+    public function add(Request $request)
+    {
+        return view('add');
+    }
+
+    public function find(Request $request)
+    {
+        return view('find', ['input' => '']);
+    }
+    public function search(Request $request)
+    {
+        $min = $request->input * 1;
+        $max = $min + 10;
+        $item = Todo::ageGreaterThan($min)->ageLessThan($max)->first();
+        $param = [
+            'input' => $request->input,
+            'item' => $item
+        ];
+        return view('find', $param);
+    }
+
+
+  
+   
     public function edit($id)
     {
         $todo = Todo::find($id);
@@ -74,11 +98,6 @@ class TodoController extends Controller
           
       }
 
-      public function show($id)
-      {
-          //
-      }
-
     public function delete(Request $request)
     {
         $todo = Todo::find($request->id);
@@ -86,5 +105,12 @@ class TodoController extends Controller
     }
     
 
+    public function remove(Request $request)
+    {
+        Todo::find($request->id)->delete();
+        return redirect('/');
+    }
+    
+    
 }
 

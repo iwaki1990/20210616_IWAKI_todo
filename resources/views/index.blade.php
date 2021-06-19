@@ -12,13 +12,13 @@
   @if (count($errors) > 0)
     <p>入力に問題があります</p>
   @endif
-protected $guarded = array('id');
+<th $guarded = array('id')>
   <div class="container">
     <div class="card">
       <p class="title mb-15">Todo List</p>
-      <div class="container mt-3">
             <div class="todo">
-        <form action="/todo/create" method="post" class="flex between mb-30">
+            <form action="/todo/create" method="post" class="flex between mb-30">
+            <input type="text" class="input-add" name="content">
           <input class="button-add" type="submit" value="追加" />
         </form>
         <table>

@@ -16,7 +16,7 @@
       color: white;
     }
 </style>
-@section('title', 'add.blade.php')
+@section('title', 'create.blade.php')
 
 
 @section('content')
