@@ -12,10 +12,21 @@
   @if (count($errors) > 0)
     <p>入力に問題があります</p>
   @endif
-  <form action="/todo" method="post">
+  protected $guarded = array('id');
   <div class="container">
     <div class="card">
       <p class="title mb-15">Todo List</p>
+      <div class="container mt-3">
+        <div class="container mb-4">
+            {!! Form::open(['route' => 'todos.store', 'method' => 'POST']) !!}
+            {{ csrf_field() }}
+                <div class="row">
+                    {{ Form::text('newTodo', null, ['class' => 'form-control col-8 mr-5']) }}
+                    {{ Form::date('newDeadline', null, ['class' => 'mr-5']) }}
+                    {{ Form::submit('新規追加', ['class' => 'btn btn-primary']) }}
+                </div>
+            {!! Form::close() !!}
+        </div>
             <div class="todo">
         <form action="/todo/create" method="post" class="flex between mb-30">
           <input class="button-add" type="submit" value="追加" />
