@@ -49,7 +49,15 @@ class TodoController extends Controller
         $todo->fill($form)->save();
         return redirect('/');
     }
-
+    public function edit($id)
+    {
+        $todo = Todo::find($id);
+        
+        return view('todos.edit', [
+            'todo' => $todo,
+        ]);
+    }
+  
     public function update(Request $request)
     {
         $text = $request->content;
@@ -66,6 +74,10 @@ class TodoController extends Controller
           
       }
 
+      public function show($id)
+      {
+          //
+      }
 
     public function delete(Request $request)
     {

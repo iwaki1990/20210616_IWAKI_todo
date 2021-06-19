@@ -19,8 +19,3 @@ Route::post('/todo/create', [TodoController::class, 'create']);
 Route::post('/todo/update', [TodoController::class, 'update']);
 Route::post('/todo/delete', [TodoController::class, 'delete']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::resource('/todos', 'TodoController');
