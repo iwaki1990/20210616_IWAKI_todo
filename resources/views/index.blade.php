@@ -32,10 +32,10 @@
           </tr>
                     <tr>
             <td>
-              2021-05-27 13:28:17
-            </td>
-            <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=1854" method="post">
-              <input type="hidden" name="_token" value="zmRyXQ9PNHsVKI9xj4gbDCJ1KFz9JbNlrRc1MXi7">              <td>
+            {{ \Carbon\Carbon::now()->format("Y年m月d日 H:i:s") }}
+            <form action="/todo/update" method="post">
+              <input type="hidden" name="_token" value="">              
+              <td>
                 <input type="text" class="input-update" value="aaaa" name="content" />
               </td>
               <td>
@@ -43,17 +43,18 @@
               </td>
             </form>
             <td>
-              <form action="http://young-woodland-12937.herokuapp.com/todo/delete?id=1854" method="post">
-                <input type="hidden" name="_token" value="zmRyXQ9PNHsVKI9xj4gbDCJ1KFz9JbNlrRc1MXi7">                <button class="button-delete">削除</button>
+              <form action="/todo/delete" method="post">
+                <input type="hidden" name="_token" value="7">                
+                <button class="button-delete">削除</button>
               </form>
             </td>
           </tr>
                     <tr>
             <td>
-              2021-05-27 15:22:00
+            {{ \Carbon\Carbon::now()->format("Y年m月d日 H:i:s") }}
             </td>
-            <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=1874" method="post">
-              <input type="hidden" name="_token" value="zmRyXQ9PNHsVKI9xj4gbDCJ1KFz9JbNlrRc1MXi7">              <td>
+            <form action="/todo/update" method="post">
+              <input type="hidden" name="_token" value="">              <td>
                 <input type="text" class="input-update" value="dadada" name="content" />
               </td>
               <td>
@@ -61,26 +62,28 @@
               </td>
             </form>
             <td>
-              <form action="http://young-woodland-12937.herokuapp.com/todo/delete?id=1874" method="post">
-                <input type="hidden" name="_token" value="zmRyXQ9PNHsVKI9xj4gbDCJ1KFz9JbNlrRc1MXi7">                <button class="button-delete">削除</button>
+              <form action="/todo/delete" method="post">
+                <input type="hidden" name="_token" value="">                
+                <button class="button-delete">削除</button>
               </form>
             </td>
           </tr>
                     <tr>
             <td>
-              2021-05-30 11:01:19
+            {{ \Carbon\Carbon::now()->format("Y年m月d日 H:i:s") }}
             </td>
-            <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=1894" method="post">
-              <input type="hidden" name="_token" value="zmRyXQ9PNHsVKI9xj4gbDCJ1KFz9JbNlrRc1MXi7">              <td>
-                <input type="text" class="input-update" value="鼻くそ" name="content" />
+            <form action="/todo/update" method="post">
+              <input type="hidden" name="_token" value="">              <td>
+                <input type="text" class="input-update" value="" name="content" />
               </td>
               <td>
                 <button class="button-update">更新</button>
               </td>
             </form>
             <td>
-              <form action="http://young-woodland-12937.herokuapp.com/todo/delete?id=1894" method="post">
-                <input type="hidden" name="_token" value="zmRyXQ9PNHsVKI9xj4gbDCJ1KFz9JbNlrRc1MXi7">                <button class="button-delete">削除</button>
+              <form action="todo/delete" method="post">
+                <input type="hidden" name="_token" value="">                
+                <button class="button-delete">削除</button>
               </form>
             </td>
           </tr>
