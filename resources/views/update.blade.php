@@ -9,12 +9,26 @@
 </ul>
 @endif
             <td>
-            <form action="/todo/update" method="post">
-              <input type="hidden" name="_token" value="">              
-              <td>
-                <input type="text" class="input-update" value="aaaa" name="content" />
-              </td>
-              <td>
-                <button class="button-update">更新</button>
-              </td>
-            </form>
+            <table>
+    @csrf
+    <input type="hidden" name="id" value="{{ $form->id }}">
+    <tr>
+      <th>
+        name
+      </th>
+      <td>
+        <input type="text" name="name" value="{{ $form->name }}">
+      </td>
+    </tr>
+    <tr>
+      <th>
+        age
+      </th>
+      <td>
+        <input type="text" name="age" value="{{ $form->age }}">
+      </td>
+    </tr>
+  </table>
+  <button>送信</button>
+</form>
+@endsection

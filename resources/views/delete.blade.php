@@ -12,12 +12,26 @@
 
 <td>
               <form action="/todo/delete" method="post">
-                <input type="hidden" name="_token" value="7">                
-                <button class="button-delete">削除</button>
-              </form>
-            </td>
-          </tr>
-                    <tr>
-            <td>
-            
-            </td>
+              <table>
+    @csrf
+    <input type="hidden" name="id" value="{{ $form->id }}">
+    <tr>
+      <th>
+        name
+      </th>
+      <td>
+        {{$form->name}}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        age
+      </th>
+      <td>
+        {{$form->age}}
+      </td>
+    </tr>
+  </table>
+  <button>送信</button>
+</form>
+@endsection
