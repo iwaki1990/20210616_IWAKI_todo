@@ -36,7 +36,7 @@
              
               {{$item->created_at}}
             </td>
-            <form action="/todo/update/{{$item->id}}" method="post">
+            <form action="/todo/update" method="post">
               <td>
                 <input type="text" class="input-update" value="{{$item->content}}" name="content" />
               </td>
