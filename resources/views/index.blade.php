@@ -19,8 +19,9 @@
             <div class="todo">
             <form action="/" method="post" class="flex between mb-30">
             <input type="text" class="input-add" name="content">
-            <input class="button-add" type="submit" value="追加" />
-          </form>
+            <input class="button-add" type="submit" value="追加" method="post" />
+            </form>
+            <table> 
           @csrf
           <tr>
             <th>作成日</th>
@@ -28,13 +29,12 @@
             <th>更新</th>
             <th>削除</th>
           </tr>
-          <tr>
           @foreach($items as $item)
           @csrf
+          <tr>
             <td>
-            {{ \Carbon\Carbon::now()->format("Y年m月d日 H:i:s") }}
+             {{ \Carbon\Carbon::now()->format("Y年m月d日 H:i:s") }}
               {{$item->created_at}}
-            </td>
             </td>
             <form action="/todo/update/{{$item->id}}" method="post">
               @csrf
@@ -43,13 +43,13 @@
               </td>
               @endforeach
               <td>
-              <form action="/todo/update" method="post">
                 <input class="button-update" type="submit" value="更新">
               </td>
             </form>
             <td>
               <form action="/todo/delete" method="post">
                 <input type="hidden" name="_token" value="削除">
+                <button class="button-delete">削除</button>
               </form>
             </td>
           </tr>

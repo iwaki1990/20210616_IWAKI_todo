@@ -9,7 +9,6 @@
 </ul>
 @endif
             <td>
-            {{ \Carbon\Carbon::now()->format("Y年m月d日 H:i:s") }}
             <form action="/todo/create" method="post">
               <input type="hidden" name="_token" value="">              
               <td>

@@ -113,8 +113,6 @@ class TodoController extends Controller
         $todo->content = $request->content;
         $todo->updated_at = $now;
         $todo->save();
-
-        $todo = Todo::find($request->id);
        //$form = $request->all();
        // unset($form['_token_']);
         //$todo->fill($form)->save();
