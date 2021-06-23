@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
+use Carbon\Carbon;
 use CreateTodosTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,8 @@ class TodoController extends Controller
         }
         return view('todo.index', ['txt' => $txt]);
     }
+
+
     public function post(Request $request)
     {
         $rules = [
@@ -34,6 +37,8 @@ class TodoController extends Controller
         
     }
 
+
+
     public function create(Request $request)
     {
         
@@ -43,12 +48,20 @@ class TodoController extends Controller
             'content' => 'required|max:20',
         ]);
 
+       // $todo = new Todo;
+        //$form = $request->all();
+       // unset($form['_token_']);
+        //$todo->fill($form)->save();
+        $now = Carbon::now();
         $todo = new Todo;
-        $form = $request->all();
-        unset($form['_token_']);
-        $todo->fill($form)->save();
+        $todo->content = $request->content;
+        $todo->created_at = $now;
+        $todo->updated_at = $now;
+        $todo->save();
         return redirect('/');
     }
+
+
     public function add(Request $request)
     {
         return view('add');
@@ -58,6 +71,8 @@ class TodoController extends Controller
     {
         return view('find', ['input' => '']);
     }
+
+
     public function search(Request $request)
     {
         $min = $request->input * 1;
@@ -82,7 +97,10 @@ class TodoController extends Controller
         ]);
     }
   
-    public function update(Request $request)
+    
+
+
+    public function update(Request $request,$id )
     {
         $text = $request->content;
         
@@ -90,13 +108,21 @@ class TodoController extends Controller
             'content' => 'required|max:20',
         ]);
 
+        $now = Carbon::now();
+        $todo = Todo::find($id);
+        $todo->content = $request->content;
+        $todo->updated_at = $now;
+        $todo->save();
+
         $todo = Todo::find($request->id);
-        $form = $request->all();
-        unset($form['_token_']);
-        $todo->fill($form)->save();
+       //$form = $request->all();
+       // unset($form['_token_']);
+        //$todo->fill($form)->save();
           return redirect('/');
           
       }
+
+
 
     public function delete(Request $request)
     {
