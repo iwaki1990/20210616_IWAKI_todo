@@ -17,7 +17,7 @@
     <div class="card">
       <p class="title mb-15">Todo List</p>
             <div class="todo">
-            <form action="/" method="post" class="flex between mb-30">
+            <form action="/todo/create" method="post" class="flex between mb-30">
           @csrf
             <input type="text" class="input-add" name="content">
             <input class="button-add" type="submit" value="追加" method="post" />
@@ -33,7 +33,7 @@
           @foreach($items as $item)
           <tr>
             <td>
-             {{ \Carbon\Carbon::now()->format("Y年m月d日 H:i:s") }}
+             
               {{$item->created_at}}
             </td>
             <form action="/todo/update/{{$item->id}}" method="post">
