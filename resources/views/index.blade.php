@@ -37,6 +37,7 @@
               {{$item->created_at}}
             </td>
             <form action="/todo/update" method="post">
+            @csrf
               <td>
                 <input type="text" class="input-update" value="{{$item->content}}" name="content" />
               </td>
@@ -47,6 +48,7 @@
             </form>
             <td>
               <form action="/todo/delete" method="post">
+              @csrf
                 <input type="hidden" name="_token" value="削除">
                 <button class="button-delete">削除</button>
               </form>
