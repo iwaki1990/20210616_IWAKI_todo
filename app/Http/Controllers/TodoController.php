@@ -103,14 +103,14 @@ class TodoController extends Controller
     public function update(Request $request)
     {
         $text = $request->content;
-        $request->$id
+        $request->id
         ([
             'content' => 'required|max:20',
             
         ]);
 
         $now = Carbon::now();
-        $todo = Todo::find($request->$id);
+        $todo = Todo::find($request->id);
         $todo->content = $request->content;
         $todo->updated_at = $now;
         $todo->save();
