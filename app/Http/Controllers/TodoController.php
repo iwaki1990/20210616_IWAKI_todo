@@ -100,7 +100,7 @@ class TodoController extends Controller
     
 
 
-    public function update(Request $request,$id)
+    public function update(Request $request)
     {
         $text = $request->content;
         $request->$id
