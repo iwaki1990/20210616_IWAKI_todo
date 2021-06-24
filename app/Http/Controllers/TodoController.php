@@ -103,7 +103,7 @@ class TodoController extends Controller
     public function update(Request $request)
     {
         $text = $request->content;
-        $request->id
+        
         ([
             'content' => 'required|max:20',
             

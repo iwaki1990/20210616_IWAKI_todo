@@ -46,10 +46,11 @@
                 <input class="button-update" type="submit" value="更新">
               </td>
             </form>
+            
             <td>
               <form action="/todo/delete" method="post">
-              @csrf
                 <input type="hidden" name="_token" value="削除">
+                @csrf
                 <button class="button-delete">削除</button>
               </form>
             </td>
