@@ -40,8 +40,8 @@
             @csrf
               <td>
                 <input type="text" class="input-update" value="{{$item->content}}" name="content" />
-              </td>
-              
+                <input type="hidden" value="{{$item->id}}" name="id">
+              </td>             
               <td>
                 <input class="button-update" type="submit" value="更新">
               </td>
