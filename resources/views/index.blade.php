@@ -34,7 +34,7 @@
           <tr>
             <td>
              
-              {{$item->created_at}}
+              {{$item->updated_at}}
             </td>
             <form action="/todo/update" method="post">
             @csrf
