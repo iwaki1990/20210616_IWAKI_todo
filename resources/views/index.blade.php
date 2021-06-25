@@ -49,7 +49,7 @@
             
             <td>
               <form action="/todo/delete" method="post">
-                <input type="hidden" name="_token" value="削除">
+                <input type="hidden" name="id" value="{{$item->id}}">
                 @csrf
                 <button class="button-delete">削除</button>
               </form>
